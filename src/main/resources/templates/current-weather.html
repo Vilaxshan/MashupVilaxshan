@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Burger-Restaurant</title>
+    <link th:href="@{/style.css}" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/images/burger.jpg">
+
+</head>
+<body>
+
+<div>
+
+
+    <h1>The current weather in Zurich looks like:</h1>
+    <img th:src="@{/images/weatherSymbol.jpg}" th:width="300" th:height="250"/>
+
+
+    <p>The current temperature:</p>
+    <p th:text="${WeatherResponse.main.temp}"/>
+    <p>Its now:</p>
+    <p th:text="${WeatherResponse.weather.get(0).description}"/>
+
+
+    <h1>The weather forecast from today in Zurich will look as following:</h1>
+    <img th:src="@{/images/forecast.png}" th:width="300" th:height="250"/>
+
+    <p>The max temperature today will be:</p>
+    <p th:text="${WeatherResponse.main.temp_max}"/>
+    <p>The min temperature today will be:</p>
+    <p th:text="${WeatherResponse.main.temp_min}"/>
+    <p>The pressure:</p>
+    <p th:text="${WeatherResponse.main.pressure}"/>
+    <p>The humidity:</p>
+    <p th:text="${WeatherResponse.main.humidity}"/>
+
+
+    <a class="buttons" href="/burger">See the Burgers.</a>
+    <a class="buttons" href="/">Homepage</a>
+
+
+
+
+
+
+
+</div>
+</body>
+</html>

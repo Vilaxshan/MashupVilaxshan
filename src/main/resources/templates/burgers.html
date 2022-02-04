@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Burger-Restaurant</title>
+    <link th:href="@{/style.css}" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/images/burger.jpg">
+</head>
+<body>
+
+
+<h1>Our menu card</h1>
+
+<p>
+    Are you very hungry for delicious burgers?<br>
+    Then you are exactly right here. Be inspired by these burgers and and let our kitchen cook for you.<br><br>
+
+    If you want to walk to the restaurant or go for a walk after the restaurant on the suitable Lake Zurich, <br>
+    then check <a href="/weather">here</a> the weather is also playing along! :)
+</p>
+
+<h3>Our Burgers</h3>
+
+<table>
+    <th:block th:each="burger : ${BurgerResponse}">
+        <tr>
+            <td th:text="${burger.name}">...</td>
+
+            <td th:text="${burger.ingredients}">...</td>
+        </tr>
+
+    </th:block>
+</table>
+
+<br><br><br>
+
+<a class="buttons" href="/weather">See the weather report</a>
+<a class="buttons" href="/">Homepage</a>
+
+
+</body>
+</html>
